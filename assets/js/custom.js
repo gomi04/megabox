@@ -9,9 +9,16 @@ var mySwiper = new Swiper ('.swiper-container',{
         type : 'bullets',
     },
     autoplay: {
-        delay: 4000,
+        delay : 4000,
     },
 });
+
+//영화차트 이미지 슬라이드
+var mySwiper = new Swiper('.swiper-container2', {
+    slidesPerView : 4,
+    spaceBetween: 24,
+});
+
 
 //영화 차트 탭 메뉴
 var movBtn = $(".movie_title > ul > li");
