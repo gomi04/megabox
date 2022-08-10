@@ -17,6 +17,16 @@ var mySwiper = new Swiper ('.swiper-container',{
 var mySwiper = new Swiper('.swiper-container2', {
     slidesPerView : 4,
     spaceBetween: 24,
+    mousewheel : {
+        invert : true,
+    },
+    keyboard : {
+        enabled : true,
+        onlyInViewport : false,
+    },
+    autoplay : {
+        delay : 5000,
+    },
 });
 
 
