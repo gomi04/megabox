@@ -27,6 +27,20 @@ var mySwiper = new Swiper('.swiper-container2', {
     autoplay : {
         delay : 5000,
     },
+    breakpoints : {
+        600 : {
+            slidesPerView : 1.4,
+            spaceBetween  : 24
+        },
+        768 : {
+            slidesPerView : 2,
+            spaceBetween : 24
+        },
+        960 : {
+            slidesPerView : 3,
+            spaceBetween : 24 
+        }
+    }
 });
 
 
