@@ -1,3 +1,5 @@
+(function($){
+    
 //배너 이미지 슬라이드
 var mySwiper = new Swiper ('.swiper-container',{
     navigation : {
@@ -59,3 +61,44 @@ movBtn.click(function(e){
     movCont.css("display","none");
     movCont.eq(index).css("display","block");
 });
+
+/*
+//공지사항 탭 메뉴
+var helpBtn = $(".notice > ul > li");
+var helpCont = $(".notice > ul > li > ul");
+
+helpCont.hide().eq(0).show();
+
+helpBtn.click(function(e){
+    e.preventDefault();
+    var target = $(this);
+    var index = target.index();
+    helpBtn.removeClass("active");
+    target.addClass("active");
+    helpCont.css("display","none");
+    helpCont.eq(index).css("display","block");
+});
+*/
+
+
+//공지사항 탭 메뉴
+var tabMenu = $(".notice");
+
+//컨텐츠 내용을 숨겨주세요!
+tabMenu.find("ul > li > ul").hide();
+tabMenu.find("li.active > ul").show();
+
+function tabList(e){
+    e.preventDefault();     //#의 기능 차단
+    var target = $(this);
+    target.next().show().parent("li").addClass("active").siblings("li").removeClass("active").find("ul").hide();
+    //버튼을 클릭하면 ~ul을 보여주고
+    //부모의 li태그에 클래스 추가하고
+    //형제의 li태그에 클래스 제거하고
+    //제거한 자식의 ul 태그를 숨겨줌
+}
+
+tabMenu.find("ul>li>a").click(tabList).focus(tabList);
+
+})(jQuery);
+
